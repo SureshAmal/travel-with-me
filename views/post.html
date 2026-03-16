@@ -4,14 +4,14 @@
         <div class="post-hero-bg skeleton-loading">
             <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
         </div>
-        
+
         <div class="post-header-content">
             <div class="post-tags">
                 <span class="post-tag" ng-repeat="tag in post.tags">#{{ tag }}</span>
             </div>
-            
+
             <h1 class="post-page-title">{{ post.title }}</h1>
-            
+
             <div class="post-author-meta">
                 <div class="author-info">
                     <div class="author-avatar" ng-bind-html="post.author.avatar"></div>
@@ -30,8 +30,8 @@
     <!-- Post Content -->
     <div class="post-body">
         <div ng-bind-html="post.content"></div>
-        
-        <a href="#!/blog" class="back-btn">
+
+        <a href="/blog" class="back-btn">
             <i class="fa-solid fa-arrow-left-long"></i> Back to all stories
         </a>
     </div>

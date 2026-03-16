@@ -116,9 +116,6 @@ img {
     background: var(--primary-dark);
 }
 
-.pad {
-    padding-bottom: 100px;
-}
 
 /* ===== NAVIGATION ===== */
 .navbar {

@@ -25,7 +25,7 @@
 
     <!-- Posts -->
     <div class="grid grid-3">
-        <a class="post-card" ng-repeat="post in filteredPosts track by post.id" ng-href="#!/blog/{{ post.id }}">
+        <a class="post-card" ng-repeat="post in filteredPosts track by post.id" ng-href="/blog/{{ post.id }}">
             <div class="post-img-container skeleton-loading">
                 <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
                 <span class="post-category">{{ post.category }}</span>
