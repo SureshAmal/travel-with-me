@@ -20,7 +20,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             controller: 'AboutController'
         })
         .otherwise({
-            redirectTo: '/'
+            templateUrl: 'views/notfound.html'
         });
 }]);
 
