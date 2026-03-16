@@ -1,0 +1,38 @@
+<div class="container section-padding">
+    
+    <div class="about-wrapper">
+        
+        <div class="about-img-col">
+            <div class="about-img-backdrop"></div>
+            <div class="skeleton-loading skeleton-rounded">
+                <img ng-src="{{ author.image }}" alt="Alex Wanderer" class="about-img" img-on-load>
+            </div>
+        </div>
+
+        <div class="about-content-col">
+            <h2 class="about-subtitle">The Author</h2>
+            <h1 class="about-title">{{ author.name }}</h1>
+            <p class="about-role">{{ author.role }}</p>
+            
+            <p class="about-bio">{{ author.bio }}</p>
+
+            <div class="about-stats-grid">
+                <div ng-repeat="stat in author.stats" class="about-stat-card">
+                    <div class="about-stat-val">{{ stat.value }}</div>
+                    <div class="about-stat-label">{{ stat.label }}</div>
+                </div>
+            </div>
+            
+            <div class="about-social-wrapper">
+                <h3 class="about-social-title">Follow my journey</h3>
+                <div class="footer-social about-social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

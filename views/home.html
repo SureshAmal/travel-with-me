@@ -1,0 +1,54 @@
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg skeleton-loading">
+        <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=2069&auto=format&fit=crop" alt="Hero Background" img-on-load>
+    </div>
+    <div class="hero-content">
+        <span class="hero-subtitle">{{ heroSubtitle }}</span>
+        <h1 class="hero-title">{{ heroTitle }}</h1>
+        <p class="hero-text">{{ heroText }}</p>
+        <a href="#!/blog" class="btn">Read The Blog</a>
+    </div>
+</section>
+
+<!-- Featured Posts Section -->
+<section class="section-padding">
+    <div class="container">
+        <h2 class="section-title">Featured Destinations</h2>
+        
+        <div class="grid grid-3">
+            <div class="post-card" ng-repeat="post in featuredPosts">
+                <div class="post-img-container skeleton-loading">
+                    <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
+                    <span class="post-category">{{ post.category }}</span>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span><i class="fa-regular fa-calendar"></i> {{ post.date }}</span>
+                        <span><i class="fa-solid fa-location-dot"></i> {{ post.location }}</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a ng-href="#!/blog/{{ post.id }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="post-excerpt">{{ post.excerpt }}</p>
+                    <a ng-href="#!/blog/{{ post.id }}" class="read-more">
+                        Read Story <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="section-padding newsletter-section">
+    <div class="container newsletter-container">
+        <h2 class="section-title newsletter-title">Join The Journey</h2>
+        <p class="newsletter-text">Subscribe to get weekly travel stories, tips, and destination guides delivered straight to your inbox.</p>
+        
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" class="newsletter-input">
+            <button type="submit" class="btn newsletter-btn">Subscribe</button>
+        </form>
+    </div>
+</section>
