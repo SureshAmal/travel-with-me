@@ -1,10 +1,10 @@
-app.controller('AboutController', ['$scope', function($scope) {
+app.controller('AboutController', ['$scope', function ($scope) {
     // Scroll to top
     window.scrollTo(0, 0);
 
     $scope.author = {
-        name: "Alex Wanderer",
-        role: "Travel Photographer & Writer",
+        name: "Suresh Amal",
+        role: "Travel Enjoyer",
         bio: "I'm a passionate traveler on a mission to explore every corner of the globe. For the past 5 years, I've been living out of a backpack, documenting my journey through photography and stories. My goal is to inspire others to step out of their comfort zones and experience the beauty the world has to offer.",
         stats: [
             { label: "Countries Visited", value: "42" },

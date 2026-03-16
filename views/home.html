@@ -1,8 +1,23 @@
-<!-- Hero Section -->
+<!-- Hero Section — Animated SVG, no image -->
 <section class="hero">
-    <div class="hero-bg skeleton-loading">
-        <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=2069&auto=format&fit=crop" alt="Hero Background" img-on-load>
+    <!-- Animated background -->
+    <div class="hero-bg-svg">
+        <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <!-- Floating circles -->
+            <circle class="float-shape s1" cx="150" cy="400" r="80" />
+            <circle class="float-shape s2" cx="1050" cy="150" r="120" />
+            <circle class="float-shape s3" cx="600" cy="500" r="50" />
+            <circle class="float-shape s4" cx="900" cy="350" r="35" />
+            <circle class="float-shape s5" cx="300" cy="100" r="60" />
+            <!-- Dotted path -->
+            <path class="travel-path" d="M0,300 Q300,100 600,300 T1200,300" />
+            <!-- Plane icon along path -->
+            <g class="plane-icon">
+                <polygon points="0,-8 20,0 0,8 4,0" />
+            </g>
+        </svg>
     </div>
+
     <div class="hero-content">
         <span class="hero-subtitle">{{ heroSubtitle }}</span>
         <h1 class="hero-title">{{ heroTitle }}</h1>
@@ -11,13 +26,13 @@
     </div>
 </section>
 
-<!-- Featured Posts Section -->
+<!-- Featured Posts -->
 <section class="section-padding">
     <div class="container">
         <h2 class="section-title">Featured Destinations</h2>
-        
+
         <div class="grid grid-3">
-            <div class="post-card" ng-repeat="post in featuredPosts">
+            <a class="post-card" ng-repeat="post in featuredPosts" ng-href="#!/blog/{{ post.id }}">
                 <div class="post-img-container skeleton-loading">
                     <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
                     <span class="post-category">{{ post.category }}</span>
@@ -27,28 +42,13 @@
                         <span><i class="fa-regular fa-calendar"></i> {{ post.date }}</span>
                         <span><i class="fa-solid fa-location-dot"></i> {{ post.location }}</span>
                     </div>
-                    <h3 class="post-title">
-                        <a ng-href="#!/blog/{{ post.id }}">{{ post.title }}</a>
-                    </h3>
+                    <h3 class="post-title">{{ post.title }}</h3>
                     <p class="post-excerpt">{{ post.excerpt }}</p>
-                    <a ng-href="#!/blog/{{ post.id }}" class="read-more">
-                        Read Story <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <span class="read-more">Read Story <i class="fa-solid fa-arrow-right"></i></span>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- Newsletter Section -->
-<section class="section-padding newsletter-section">
-    <div class="container newsletter-container">
-        <h2 class="section-title newsletter-title">Join The Journey</h2>
-        <p class="newsletter-text">Subscribe to get weekly travel stories, tips, and destination guides delivered straight to your inbox.</p>
-        
-        <form class="newsletter-form">
-            <input type="email" placeholder="Your email address" class="newsletter-input">
-            <button type="submit" class="btn newsletter-btn">Subscribe</button>
-        </form>
-    </div>
-</section>
+<!-- Newsletter -->
