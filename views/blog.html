@@ -1,34 +1,31 @@
-<div class="container section-padding">
+<div class="container pad">
     <h1 class="section-title blog-page-title">Travel Stories</h1>
 
-    <!-- Controls: Search & Filter -->
+    <!-- Filters & Search -->
     <div class="controls-bar">
         <div class="filters">
-            <button class="filter-btn" 
-                    ng-repeat="cat in categories" 
-                    ng-class="{active: selectedCategory === cat}"
-                    ng-click="setCategory(cat)">
+            <button class="filter-btn" ng-repeat="cat in categories" ng-class="{active: selectedCategory === cat}"
+                ng-click="setCategory(cat)">
                 {{ cat | uppercase }}
             </button>
         </div>
-
         <div class="search-box">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" ng-model="searchQuery" placeholder="Search by title, location, or keyword...">
+            <input type="text" ng-model="searchQuery" placeholder="Search posts...">
         </div>
     </div>
 
-    <!-- No Results Message -->
-    <div ng-if="(allPosts | filter:postFilter).length === 0" class="no-results">
+    <!-- No Results -->
+    <div ng-if="filteredPosts.length === 0" class="no-results">
         <i class="fa-solid fa-plane-slash no-results-icon"></i>
-        <h3>No journeys found matching your search.</h3>
-        <p class="no-results-text">Try adjusting your filters or search term.</p>
-        <button class="btn no-results-btn" ng-click="searchQuery=''; selectedCategory='all'">Clear Search</button>
+        <h3>No journeys found.</h3>
+        <p class="no-results-text">Try a different search or filter.</p>
+        <button class="btn no-results-btn" ng-click="searchQuery=''; selectedCategory='all'">Clear</button>
     </div>
 
-    <!-- Posts Grid -->
+    <!-- Posts -->
     <div class="grid grid-3">
-        <div class="post-card" ng-repeat="post in allPosts | filter:postFilter | orderBy:'-id'">
+        <a class="post-card" ng-repeat="post in filteredPosts track by post.id" ng-href="#!/blog/{{ post.id }}">
             <div class="post-img-container skeleton-loading">
                 <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
                 <span class="post-category">{{ post.category }}</span>
@@ -38,16 +35,10 @@
                     <span><i class="fa-regular fa-calendar"></i> {{ post.date }}</span>
                     <span><i class="fa-solid fa-location-dot"></i> {{ post.location }}</span>
                 </div>
-                <h3 class="post-title">
-                    <a ng-href="#!/blog/{{ post.id }}">{{ post.title }}</a>
-                </h3>
+                <h3 class="post-title">{{ post.title }}</h3>
                 <p class="post-excerpt">{{ post.excerpt }}</p>
-                <div class="post-card-footer">
-                    <a ng-href="#!/blog/{{ post.id }}" class="read-more">
-                        Read Story <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+                <span class="read-more">Read Story <i class="fa-solid fa-arrow-right"></i></span>
             </div>
-        </div>
+        </a>
     </div>
 </div>

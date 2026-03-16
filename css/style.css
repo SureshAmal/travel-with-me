@@ -1,4 +1,4 @@
-/* ===== WANDERLUST — MINIMAL DESIGN SYSTEM ===== */
+/* ===== TravelWithMe — MINIMAL DESIGN SYSTEM ===== */
 /* Modern CSS: color-scheme, accent-color, text-wrap */
 
 /* ----- Dark Theme (Default) ----- */
@@ -100,7 +100,7 @@ img {
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -108,8 +108,16 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--text-muted);
-    border-radius: 3px;
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+.pad {
+    padding-bottom: 100px;
 }
 
 /* ===== NAVIGATION ===== */
@@ -200,7 +208,7 @@ img {
 
 /* ===== LAYOUT ===== */
 main {
-    min-height: calc(100vh - 100px);
+    min-height: 100vh;
     padding-top: 52px;
 }
 
@@ -248,6 +256,13 @@ main {
 
 .grid-2 {
     grid-template-columns: repeat(2, 1fr);
+}
+
+/* Disable ng-animate on filtered cards */
+.grid .post-card.ng-enter,
+.grid .post-card.ng-leave,
+.grid .post-card.ng-move {
+    transition: none !important;
 }
 
 /* ===== POST CARD (minimal) ===== */
@@ -512,9 +527,6 @@ main {
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
     gap: 0.75rem;
-    background: var(--bg-card);
-    padding: 0.75rem;
-    border-radius: var(--radius);
 }
 
 .search-box {
@@ -586,7 +598,7 @@ main {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 20%, var(--bg-body) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.8) 75%, var(--bg-body) 100%);
 }
 
 .post-hero-bg img {
@@ -626,14 +638,16 @@ main {
     line-height: 1.2;
     margin-bottom: 0.5rem;
     color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .post-author-meta {
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 0.85rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .author-info {
@@ -657,10 +671,12 @@ main {
 .author-name {
     font-weight: 600;
     color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .author-date {
     font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .location-icon {

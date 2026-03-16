@@ -1,6 +1,6 @@
 // ThemeService — persists user's theme preference in localStorage
-app.factory('ThemeService', ['$rootScope', function($rootScope) {
-    var STORAGE_KEY = 'wanderlust-theme';
+app.factory('ThemeService', ['$rootScope', function ($rootScope) {
+    var STORAGE_KEY = 'TravelWithMe-theme';
     var currentTheme = localStorage.getItem(STORAGE_KEY) || 'dark';
 
     // Apply on init
@@ -14,18 +14,18 @@ app.factory('ThemeService', ['$rootScope', function($rootScope) {
     }
 
     return {
-        getTheme: function() {
+        getTheme: function () {
             return currentTheme;
         },
-        toggleTheme: function() {
+        toggleTheme: function () {
             var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             applyTheme(newTheme);
             return newTheme;
         },
-        setTheme: function(theme) {
+        setTheme: function (theme) {
             applyTheme(theme);
         },
-        isDark: function() {
+        isDark: function () {
             return currentTheme === 'dark';
         }
     };
