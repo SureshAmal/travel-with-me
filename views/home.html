@@ -2,7 +2,11 @@
 <section class="hero">
     <!-- Animated background -->
     <div class="hero-bg-svg">
-        <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <svg
+            viewBox="0 0 1200 600"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+        >
             <!-- Floating circles -->
             <circle class="float-shape s1" cx="150" cy="400" r="80" />
             <circle class="float-shape s2" cx="1050" cy="150" r="120" />
@@ -32,19 +36,35 @@
         <h2 class="section-title">Featured Destinations</h2>
 
         <div class="grid grid-3">
-            <a class="post-card" ng-repeat="post in featuredPosts" ng-href="./blog/{{ post.id }}">
+            <a
+                class="post-card"
+                ng-repeat="post in featuredPosts"
+                ng-href="./blog/{{ post.id }}"
+            >
                 <div class="post-img-container skeleton-loading">
-                    <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
+                    <img
+                        ng-src="{{ post.image }}"
+                        alt="{{ post.title }}"
+                        img-on-load
+                    />
                     <span class="post-category">{{ post.category }}</span>
                 </div>
                 <div class="post-content">
                     <div class="post-meta">
-                        <span><i class="fa-regular fa-calendar"></i> {{ post.date }}</span>
-                        <span><i class="fa-solid fa-location-dot"></i> {{ post.location }}</span>
+                        <span
+                            ><i class="fa-regular fa-calendar"></i> {{ post.date
+                            }}</span
+                        >
+                        <span
+                            ><i class="fa-solid fa-location-dot"></i> {{
+                            post.location }}</span
+                        >
                     </div>
                     <h3 class="post-title">{{ post.title }}</h3>
                     <p class="post-excerpt">{{ post.excerpt }}</p>
-                    <span class="read-more">Read Story <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="read-more"
+                        >Read Story <i class="fa-solid fa-arrow-right"></i
+                    ></span>
                 </div>
             </a>
         </div>

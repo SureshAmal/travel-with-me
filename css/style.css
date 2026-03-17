@@ -68,6 +68,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: revert;
+}
+
 body {
     font-family: var(--font-body);
     background: var(--bg-body);
@@ -968,28 +972,30 @@ main {
 
 .view-animate-container {
     position: relative;
+    overflow: hidden;
 }
 
-.view-animate.ng-enter,
-.view-animate.ng-leave {
-    transition: opacity 0.3s ease;
-    position: absolute;
-    inset: 0;
-}
-
+/* Smooth crossfade with absolute positioned leaving view */
 .view-animate.ng-enter {
     opacity: 0;
 }
 
-.view-animate.ng-enter.ng-enter-active {
+.view-animate.ng-enter-active {
+    transition: opacity 0.25s ease;
     opacity: 1;
 }
 
 .view-animate.ng-leave {
+    transition: opacity 0.25s ease;
     opacity: 1;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    width: 100%;
+    min-height: calc(100vh - 52px);
 }
 
-.view-animate.ng-leave.ng-leave-active {
+.view-animate.ng-leave-active {
     opacity: 0;
 }
 

@@ -2,26 +2,35 @@
     <!-- Post Hero -->
     <header class="post-hero">
         <div class="post-hero-bg skeleton-loading">
-            <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load>
+            <img ng-src="{{ post.image }}" alt="{{ post.title }}" img-on-load />
         </div>
 
         <div class="post-header-content">
             <div class="post-tags">
-                <span class="post-tag" ng-repeat="tag in post.tags">#{{ tag }}</span>
+                <span class="post-tag" ng-repeat="tag in post.tags"
+                    >#{{ tag }}</span
+                >
             </div>
 
             <h1 class="post-page-title">{{ post.title }}</h1>
 
             <div class="post-author-meta">
                 <div class="author-info">
-                    <div class="author-avatar" ng-bind-html="post.author.avatar"></div>
+                    <div
+                        class="author-avatar"
+                        ng-bind-html="post.author.avatar"
+                    ></div>
                     <div>
                         <div class="author-name">{{ post.author.name }}</div>
-                        <div class="author-date"><i class="fa-regular fa-calendar"></i> {{ post.date }}</div>
+                        <div class="author-date">
+                            <i class="fa-regular fa-calendar"></i> {{ post.date
+                            }}
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <i class="fa-solid fa-location-dot location-icon"></i> {{ post.location }}
+                    <i class="fa-solid fa-location-dot location-icon"></i> {{
+                    post.location }}
                 </div>
             </div>
         </div>

@@ -4,7 +4,6 @@ app.controller("PostController", [
   "PostService",
   "$location",
   function ($scope, $routeParams, PostService, $location) {
-    window.scrollTo(0, 0);
     var postId = $routeParams.postId;
     $scope.post = PostService.getPostById(postId);
 
