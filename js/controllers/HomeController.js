@@ -3,7 +3,7 @@ app.controller("HomeController", [
   "PostService",
   function ($scope, PostService) {
     $scope.featuredPosts = PostService.getFeaturedPosts();
-
+    window.scrollTo(0, 0);
     // Some static hero data could go here
     $scope.heroTitle = "Discover The World";
     $scope.heroSubtitle = "Explore. Dream. Discover.";
