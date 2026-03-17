@@ -2,8 +2,6 @@ app.controller("HomeController", [
   "$scope",
   "PostService",
   function ($scope, PostService) {
-    // Scroll to top when view is loaded
-
     $scope.featuredPosts = PostService.getFeaturedPosts();
 
     // Some static hero data could go here
